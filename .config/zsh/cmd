@@ -1,0 +1,17 @@
+alias .="cd .."
+alias ..="cd ../.."
+alias ...="cd ../../.."
+alias ....="cd ../../../.."
+alias .....="cd ../../../../.."
+
+alias l='ls -A --color=always --group-directories-first -h -X -l'
+# -A do not list implied . and ..
+# --color=always colorize the output
+# --group-directories-first group directories before files
+# -h print sizes in human readable format
+# -X sort by extension
+# -l use a long listing format
+
+alias c='clear'
+
+alias h="history"
