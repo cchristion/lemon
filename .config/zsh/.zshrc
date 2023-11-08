@@ -1,4 +1,5 @@
-# Luke's config for the Zoomer Shell
+# Fork of Luke's config for the Zoomer Shell
+# https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
