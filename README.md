@@ -1,11 +1,9 @@
-# Dotfiles
+# Watermelon
 
 ## Installing
 
-	git clone https://github.com/cchristion/dotfiles.git
-	cd dotfiles
-	ln -s .config ${XDG_CONFIG_HOME:-$HOME/.config}
-	ln -s .zshenv ${XDG_CONFIG_HOME:-$HOME/.zshenv}
+	git clone --depth 1 https://github.com/cchristion/watermelon.git
+	cp -rlv watermelon/.config ~/
 
 ## (Optional) Installing fast-syntax-highlight plugin for zsh
 
