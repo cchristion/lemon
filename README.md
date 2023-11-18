@@ -7,6 +7,7 @@
 	cp -rsv $(pwd)/.config ~/
 	cp -rsv $(pwd)/.zshenv ~/.zshenv
 	mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+	exec zsh cd
 
 ## (Optional) Installing fast-syntax-highlight plugin for zsh
 
