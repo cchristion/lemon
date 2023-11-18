@@ -6,7 +6,7 @@
 	cd watermelon
 	cp -rsv $(pwd)/.config ~/
 	cp -rsv $(pwd)/.zshenv ~/.zshenv
-	mkdir -p ${$XDG_CACHE_HOME:-$HOME/.cache}/zsh
+	mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 
 ## (Optional) Installing fast-syntax-highlight plugin for zsh
 
