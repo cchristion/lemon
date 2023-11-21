@@ -1,13 +1,10 @@
-# Fork of Luke's config for the Zoomer Shell
+# Custom Fork of Luke's config for the Zoomer Shell
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
-# Enable colors:
-autoload -U colors && colors
-
-# Custom Prompt:
-PS1="
-%(4~|.../%3~|%~)
-> "
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Automatically cd into typed directory.
 setopt autocd
@@ -57,3 +54,9 @@ bindkey "^[[B" history-beginning-search-forward-end
 
 # Load syntax highlighting; should be last.
 source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+# Load powerlevel10k theme; should be last.
+source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
