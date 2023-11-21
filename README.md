@@ -19,5 +19,6 @@
 
 3.  Installing powerlevel10k theme
     ```shell
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+        ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k
     ```
