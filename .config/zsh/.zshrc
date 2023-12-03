@@ -55,8 +55,8 @@ bindkey "^[[B" history-beginning-search-forward-end
 # Load syntax highlighting; should be last.
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
-[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
-
 # Load powerlevel10k theme; should be last
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
+[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
