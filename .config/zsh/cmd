@@ -2,8 +2,6 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 
 # Basic aliases
 alias l='ls -A --color=always --group-directories-first -h -X'
