@@ -49,6 +49,9 @@ bindkey "^[[B" history-beginning-search-forward-end
 # Load aliases and shortcuts if existent.
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
 
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
+
 # Use LS_COLORS to color-code completion menu entries
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
@@ -57,6 +60,3 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/f
 
 # Load powerlevel10k theme; should be last
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
-[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
