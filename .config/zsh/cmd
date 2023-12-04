@@ -15,8 +15,8 @@ alias c='clear'
 alias h="history"
 
 # Set the default editor to Neovim or vim or vi or nano
-export EDITOR=$(command -v nvim || command -v vim || command -v vi || nano)
-export VISUAL=$EDITOR
+export EDITOR=$(command -v nvim || command -v vim || command -v vi || command -v nano)
+export VISUAL="$EDITOR"
 
 # Viewing the command history
 alias e=$EDITOR
