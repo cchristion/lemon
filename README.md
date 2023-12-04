@@ -4,7 +4,7 @@
    1. Termux
         ```shell
         { pkg up
-        pkg install git tmux zsh }
+        pkg install git tmux zsh ;}
         ```
    1. Alpine
         ```shell
@@ -13,7 +13,7 @@
    1. Ubuntu
         ```shell
         { apt update
-        apt install git tmux zsh }
+        apt install git tmux zsh ;}
         ```
 
 1. Installing
@@ -23,7 +23,7 @@
     cp -rsv $(pwd)/.config ~/
     cp -rsv $(pwd)/.zshenv ~/.zshenv
     mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins
-    cd }
+    cd ;}
     ```
 
 1.  Installing fast-syntax-highlight plugin for zsh
