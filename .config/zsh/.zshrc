@@ -1,31 +1,30 @@
 # Custom Fork of Luke's config for the Zoomer Shell
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Start tmux. Should stay close to the top.
+export SHELL="/bin/zsh"
+export LC_ALL="C.UTF-8"
+[ -z "$TMUX"  ] && {{ tmux attach || exec tmux new-session } && exit;}
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top.
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
-# Set default shell to zsh
-export SHELL="/bin/zsh"
+setopt autocd   # Automatically cd into typed directory.
+setopt interactive_comments # Enable Comments.
 
-# Automatically cd into typed directory.
-setopt autocd
-
-# Enable Comments
-setopt interactive_comments
-
-# History in cache directory:
+# History in cache directory.
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
-# Basic auto/tab complete:
+# Basic auto/tab complete.
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)   # Include hidden files.
 
-# Use vim keys in tab complete menu:
+# Use vim keys in tab complete menu.
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
