@@ -3,11 +3,11 @@
 ## Try it in Docker
 * Download Dockerfile
   ```shell
-  wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
+  curl --proto '=https' --tlsv1.3 -sSf https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o /tmp/Dockerfile
   ```
 * Build Docker image
   ```shell
-  docker build -t "watermelon" .
+  docker build -f /tmp/Dockerfile -t "watermelon" .
   ```
 * Run Docker container
   ```shell
@@ -33,9 +33,9 @@
 ## Installing watermelon
 * Download the Script
   ```shell
-  curl --proto '=https' --tlsv1.3 -sSf https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o install.sh
+  curl --proto '=https' --tlsv1.3 -sSf https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o /tmp/install.sh
   ```
 * Installing watermelon
   ```shell
-  sh install.sh
+    sh /tmp/install.sh
   ```
