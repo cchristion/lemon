@@ -1,22 +1,36 @@
 # Watermelon
 
+* Try it in Docker
+    * Download Dockerfile
+        ```shell
+        wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
+        ```
+    * Build Docker image
+        ```shell
+        Docker build -t "watermelon" .
+        ```
+    * Run Docker container
+        ```shell
+        docker run -it "watermelon"
+        ```
+
 1. Install Dependencies
    1. Termux
         ```shell
         { pkg up
         pkg install git tmux zsh ;}
         ```
-   1. Alpine
+   2. Alpine
         ```shell
         apk add --upgrade --no-cache git tmux zsh
         ```
-   1. Ubuntu
+   3. Ubuntu
         ```shell
         { apt update
         apt install git tmux zsh ;}
         ```
 
-1. Installing
+2. Installing
     ```shell
     { git clone --depth 1 https://github.com/cchristion/watermelon.git
     cd watermelon
@@ -26,12 +40,12 @@
     cd ;}
     ```
 
-1.  Installing fast-syntax-highlight plugin for zsh
+3.  Installing fast-syntax-highlight plugin for zsh
     ```shell
     git clone --depth 1 https://github.com/zdharma-continuum/fast-syntax-highlighting ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting
     ```
 
-1.  Installing powerlevel10k theme
+4.  Installing powerlevel10k theme
     ```shell
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k
     ```
