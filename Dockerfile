@@ -25,7 +25,7 @@ RUN echo "${USERNAME} ALL=(ALL) ALL" >> /etc/sudoers
 
 # Installing softwares
 RUN apk add --upgrade --no-cache \
-    sudo zsh git tmux curl
+    sudo zsh git tmux curl direnv
 
 # Changing USER
 USER ${USERNAME}
