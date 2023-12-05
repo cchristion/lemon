@@ -3,7 +3,7 @@
 ## Try it in Docker
   ```shell
   wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
-  docker build -f /tmp/Dockerfile -t "watermelon" .
+  docker build -t "watermelon" .
   docker run -it "watermelon"
   ```
 
