@@ -7,7 +7,7 @@
         ```
     * Build Docker image
         ```shell
-        Docker build -t "watermelon" .
+        docker build -t "watermelon" .
         ```
     * Run Docker container
         ```shell
