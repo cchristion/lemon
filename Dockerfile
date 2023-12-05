@@ -25,22 +25,13 @@ RUN echo "${USERNAME} ALL=(ALL) ALL" >> /etc/sudoers
 
 # Installing softwares
 RUN apk add --upgrade --no-cache \
-    sudo zsh git tmux
+    sudo zsh git tmux curl
 
 # Changing USER
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
 
-RUN git clone --depth 1 https://github.com/cchristion/watermelon.git && \
-    cd watermelon && \
-    cp -rsv $(pwd)/.config ~/ && \
-    cp -rsv $(pwd)/.zshenv ~/.zshenv  && \
-    mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins  && \
-    cd
-
-RUN git clone --depth 1 https://github.com/zdharma-continuum/fast-syntax-highlighting ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting
-
-RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k
+RUN curl --proto '=https' --tlsv1.3 -sSf https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o /tmp/install.sh && sh /tmp/install.sh
 
 # Start zsh
 ENTRYPOINT ["/bin/zsh"]
