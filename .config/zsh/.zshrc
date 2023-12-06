@@ -54,7 +54,7 @@ bindkey "^[[B" history-beginning-search-forward-end
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
 
 # Load local .zshrc (.zshrc.local) if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
