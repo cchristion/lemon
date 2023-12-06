@@ -51,13 +51,13 @@ bindkey "^[[B" history-beginning-search-forward-end
 [[ -z "$(command -v direnv)" ]] && eval "$(direnv hook zsh)"
 
 # Load aliases and shortcuts if existent.
-[[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
 
 # Load local .zshrc (.zshrc.local) if existent.
-[[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
-[[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
 
 # Use LS_COLORS to color-code completion menu entries
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
