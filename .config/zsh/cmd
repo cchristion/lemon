@@ -8,8 +8,8 @@ export EDITOR=$(command -v nvim || command -v vim || command -v vi || command -v
 export VISUAL="$EDITOR"
 
 # Basic aliases
-alias l='ls -A --color=always --group-directories-first -h -X'
-alias ll='ls -A --color=always --group-directories-first -h -X -l'
+alias l='ls -A --color=always --group-directories-first -h -X -v'
+alias ll='ls -A --color=always --group-directories-first -h -X -v -l'
 alias c='clear'
 alias h="history"
 alias e=$EDITOR
