@@ -4,8 +4,7 @@
 # Start tmux. Should stay close to the top.
 export SHELL="/bin/zsh"
 export LC_ALL="C.UTF-8"
-# [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} ]] && {{ tmux attach || exec tmux new-session ;} && exit ;}
-[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;}
+command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;};}
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top.
