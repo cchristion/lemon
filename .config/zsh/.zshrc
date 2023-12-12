@@ -6,7 +6,6 @@ export SHELL="/bin/zsh"
 export LC_ALL="C.UTF-8"
 command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;};}
 
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top.
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
@@ -34,10 +33,11 @@ bindkey -v '^?' backward-delete-char
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line && zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -M vicmd '^[[P' vi-delete-char
-bindkey -M vicmd '^e' edit-command-line
-bindkey -M visual '^[[P' vi-delete
+bindkey -a '^[' edit-command-line
+# bindkey '^e' edit-command-line
+# bindkey -M vicmd '^[[P' vi-delete-char
+# bindkey -M vicmd '^e' edit-command-line
+# bindkey -M visual '^[[P' vi-delete
 
 # History complete command
 autoload -U history-search-end
