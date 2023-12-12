@@ -1,6 +1,9 @@
 # Custom Fork of Luke's config for the Zoomer Shell
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
+# Load .local if existent. Should stay close to the top.
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
+
 # Start tmux. Should stay close to the top.
 export SHELL="/bin/zsh"
 export LC_ALL="C.UTF-8"
@@ -47,9 +50,6 @@ command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
 # Load aliases and shortcuts if existent.
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
-
-# Load local .zshrc (.zshrc.local) if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
