@@ -10,3 +10,6 @@ export LESSHISTFILE=-
 
 # Add local bin to path
 export PATH=~/.local/bin:$PATH
+
+# Comment to enable tmux
+TMUX=X
