@@ -15,10 +15,12 @@ command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session &&
 setopt autocd   # Automatically cd into typed directory.
 setopt interactive_comments # Enable Comments.
 
-# History in cache directory.
+# History.
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt SHARE_HISTORY 
 
 # Basic auto/tab complete.
 autoload -U compinit
@@ -48,17 +50,17 @@ bindkey "^[[B" history-beginning-search-forward-end
 # direnv setup
 command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
+# Use LS_COLORS to color-code completion menu entries
+[[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 # Load aliases and shortcuts if existent.
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
 
-# Use LS_COLORS to color-code completion menu entries
-[[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Load powerlevel10k theme; should be last
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
 
 # Load syntax highlighting; should be last.
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
-
-# Load powerlevel10k theme; should be last
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
