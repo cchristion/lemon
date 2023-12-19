@@ -20,7 +20,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 setopt HIST_EXPIRE_DUPS_FIRST
-setopt SHARE_HISTORY 
+setopt SHARE_HISTORY
 
 # Basic auto/tab complete.
 autoload -U compinit
