@@ -38,7 +38,7 @@ bindkey -v '^?' backward-delete-char
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line && zle -N edit-command-line
-bindkey '^[' edit-command-line
+bindkey '\C-e' edit-command-line
 
 # History complete command
 autoload -U history-search-end
