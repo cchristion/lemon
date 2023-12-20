@@ -28,6 +28,6 @@
 ### Downloading and Installing
 * Download the Script
   ```shell
-  wget https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -O /tmp/install.sh
-  sh /tmp/install.sh
+  curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o install.sh
+  sh install.sh
   ```
