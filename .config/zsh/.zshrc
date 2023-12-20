@@ -5,8 +5,6 @@
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
 
 # Start tmux. Should stay close to the top.
-export SHELL="/bin/zsh"
-export LC_ALL="C.UTF-8"
 command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;};}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top.
@@ -50,6 +48,9 @@ bindkey "^[[B" history-beginning-search-forward-end
 # direnv setup
 command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
+# Disable .lesshst
+export LESSHISTFILE=-
+
 # Use LS_COLORS to color-code completion menu entries
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
@@ -60,7 +61,7 @@ command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
 
 # Load powerlevel10k theme; should be last
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
 
 # Load syntax highlighting; should be last.
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
