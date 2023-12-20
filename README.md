@@ -1,33 +1,25 @@
 # Watermelon
 
 ## Try it in Docker
-  ```shell
-  wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
-  docker build -t "watermelon" .
-  docker run -it "watermelon"
-  ```
+```shell
+wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
+docker build -t "watermelon" .
+docker run -it "watermelon"
+```
 
 ## Installing watermelon
 
 ### Install Dependencies
-* Termux
-  ```shell
-  pkg up
-  pkg install git tmux zsh direnv
-  ```
-* Alpine
-  ```shell
-  apk add --upgrade --no-cache git tmux zsh direnv
-  ```
-* Ubuntu
-  ```shell
-  apt update
-  apt install git tmux zsh direnv
-  ```
+```
+git zsh
+```
+```
+# Optional
+tmux direnv delta
+```
 
 ### Downloading and Installing
-* Download the Script
-  ```shell
-  curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o install.sh
-  sh install.sh
-  ```
+```shell
+curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o install.sh
+sh install.sh
+```
