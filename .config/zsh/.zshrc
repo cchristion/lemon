@@ -3,14 +3,6 @@
 
 ##################################################
 
-# Load .local if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
-
-# Load .plugins if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.plugins" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.plugins"
-
-##################################################
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top.
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
@@ -65,17 +57,10 @@ bindkey "^[[B" history-beginning-search-forward-end
 
 ##################################################
 
-# Disable .lesshst
-export LESSHISTFILE=-
+# Load .extras if existent.
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.extras" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.extras"
 
-# Aliases
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias l="ls -A --color=always --group-directories-first -h -X -v"
-alias ll="ls -A --color=always --group-directories-first -h -X -v -l"
-alias c="clear"
-alias h="history"
-alias e=$EDITOR
+# Load .local if existent.
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
 
 ##################################################

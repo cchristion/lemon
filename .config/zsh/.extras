@@ -1,3 +1,16 @@
+# Disable .lesshst
+export LESSHISTFILE=-
+
+# Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias l="ls -A --color=always --group-directories-first -h -X -v"
+alias ll="ls -A --color=always --group-directories-first -h -X -v -l"
+alias c="clear"
+alias h="history"
+alias e=$EDITOR
+
 # Start tmux. Should stay close to the top.
 # command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;};}
 
