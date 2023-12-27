@@ -1,11 +1,15 @@
 # Custom Fork of Luke's config for the Zoomer Shell
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
-# Load .local if existent. Should stay close to the top.
+##################################################
+
+# Load .local if existent.
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
 
-# Start tmux. Should stay close to the top.
-command -v tmux > /dev/null && {[[ -z ${TMUX+X} ]] && { exec tmux new-session && exit ;};}
+# Load .plugins if existent.
+[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.plugins" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.plugins"
+
+##################################################
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top.
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -45,17 +49,10 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 
-# direnv setup
-command -v direnv > /dev/null && eval "$(direnv hook zsh)"
-
-# Disable .lesshst
-export LESSHISTFILE=-
-
 # Use LS_COLORS to color-code completion menu entries
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# Load aliases and shortcuts if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cmd"
+##################################################
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
@@ -65,3 +62,20 @@ export LESSHISTFILE=-
 
 # Load syntax highlighting; should be last.
 [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
+
+##################################################
+
+# Disable .lesshst
+export LESSHISTFILE=-
+
+# Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias l="ls -A --color=always --group-directories-first -h -X -v"
+alias ll="ls -A --color=always --group-directories-first -h -X -v -l"
+alias c="clear"
+alias h="history"
+alias e=$EDITOR
+
+##################################################
