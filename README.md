@@ -15,7 +15,7 @@ git zsh
 ```
 ```
 # Optional
-tmux direnv delta
+delta direnv fzf tmux zoxide
 ```
 
 ### Downloading and Installing
@@ -24,7 +24,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/cchristi
 sh install.sh
 ```
 
-### Downloading and Installing
+### Updating watermelon
 ```sh
 # cd into watermelon directory
 ( git pull && cp -rsvf $(pwd)/.config ~/ && cp -rsvf $(pwd)/.zshenv ~/.zshenv )
