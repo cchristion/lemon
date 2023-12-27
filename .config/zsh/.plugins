@@ -5,4 +5,4 @@
 command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
 # setup zoxide
-command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
+command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
