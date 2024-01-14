@@ -17,7 +17,7 @@ Dependencies included.
 2. Build an image
    ```shell
    docker build \
-   -t "lemon-$(date +%Y%m%d%H%M%S)" \
+   -t lemon:1.0.0 \
    --build-arg gid="$(id -g)" \
    --build-arg uid="$(id -u)" \
    -f $LEMONTMPFILE \
