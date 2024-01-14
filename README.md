@@ -1,31 +1,22 @@
-# Watermelon
+# LeanLoom, lnl
 
-## Try it in Docker
-```sh
-wget https://raw.githubusercontent.com/cchristion/watermelon/main/Dockerfile
-docker build -t "watermelon" .
-docker run -it "watermelon"
-```
-
-## Installing watermelon
+## Installing lnl
 
 ### Install Dependencies
 ```
 git zsh
-```
-```
+
 # Optional
-delta direnv fzf tmux zoxide
+7zip bash build-base bzip2-dev curl libffi-dev linux-headers openssh openssl-dev readline-dev sqlite-dev sudo tk-dev tmux xz-dev zlib-dev zoxide
 ```
 
 ### Downloading and Installing
-```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/cchristion/watermelon/main/install.sh -o install.sh
-sh install.sh
+```shell
+curl --proto '=https' --tlsv1.3 -sSfL https://raw.githubusercontent.com/cchristion/lnl/main/install.sh | sh
 ```
 
-### Updating watermelon
+### Updating lnl
 ```sh
-# cd into watermelon directory
+# cd into lnl directory
 ( git pull && cp -rsvf $(pwd)/.config ~/ && cp -rsvf $(pwd)/.zshenv ~/.zshenv )
 ```
