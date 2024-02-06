@@ -21,6 +21,10 @@ alias e=$EDITOR
 command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
 
 # Setup pyenv
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+
+# Setup rust and cargo
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
