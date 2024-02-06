@@ -1,37 +1,28 @@
-# Custom Fork of Luke's config for the Zoomer Shell
-# https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
+# Custom Fork of Luke's config https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc
 
-##################################################
+# Source Powerlevel10k instant prompt
+source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" 2>/dev/null
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top.
-[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# Options
+setopt autocd interactive_comments HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_ALL_DUPS SHARE_HISTORY
 
-setopt autocd   # Automatically cd into typed directory.
-setopt interactive_comments # Enable Comments.
+# History
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
-# History.
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_ALL_DUPS
-setopt SHARE_HISTORY
-
-# Basic auto/tab complete.
+# Autocomplete
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)   # Include hidden files.
+_comp_options+=(globdots)
 
-# Use vim keys in tab complete menu.
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# Key bindings
+bindkey -M menuselect 'h' vi-backward-char 'k' vi-up-line-or-history 'l' vi-forward-char 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Edit line in vim with ctrl-e:
+# Edit line in vim with ctrl-e
 autoload edit-command-line && zle -N edit-command-line
 bindkey '\C-e' edit-command-line
 
@@ -42,26 +33,15 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 
-# Use LS_COLORS to color-code completion menu entries
+# Color-coded completion menu (if LS_COLORS is set)
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-##################################################
+# Themes and plugins
+source "$XDG_CONFIG_HOME/zsh/.p10k.zsh" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
+# Extra configurations
+source "$XDG_CONFIG_HOME/zsh/.extras"
+source "$XDG_CONFIG_HOME/zsh/.local"
 
-# Load powerlevel10k theme; should be last
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
-
-# Load syntax highlighting; should be last.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
-
-##################################################
-
-# Load .extras if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.extras" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.extras"
-
-# Load .local if existent.
-[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.local"
-
-##################################################
