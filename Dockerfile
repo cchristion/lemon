@@ -21,7 +21,6 @@ RUN addgroup --gid $gid --system ${USERNAME} && \
 RUN echo "${USERNAME}:${PASSWORD}" | chpasswd && echo "${USERNAME} ALL=(ALL) ALL" >> /etc/sudoers
 
 # Installing softwares
-# Add 7zip if neccessary
 RUN apk add --upgrade --no-cache \
     curl git neovim sudo tmux zoxide zsh
 
