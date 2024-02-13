@@ -1,5 +1,5 @@
 # Base Docker image
-FROM alpine:3.18
+FROM ubuntu:jammy
 
 # Metadata
 LABEL project="lemon"
@@ -11,9 +11,13 @@ ARG uid=10000
 ARG USERNAME=lemon
 ARG PASSWORD=lemon
 
-# Installing softwares
-RUN apk add --upgrade --no-cache \
-    curl git neovim sudo tmux zoxide zsh
+# Non-interactive install and UTC timezone
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+RUN apt-get update && \
+    apt-get install -y curl git neovim sudo tmux zoxide zsh && \
+    rm -rf /var/lib/apt/lists/*
 
 # Adding user
 RUN addgroup --gid $gid --system ${USERNAME} && \
