@@ -11,6 +11,10 @@ ARG uid=10000
 ARG USERNAME=lemon
 ARG PASSWORD=lemon
 
+# Installing softwares
+RUN apk add --upgrade --no-cache \
+    curl git neovim sudo tmux zoxide zsh
+
 # Adding user
 RUN addgroup --gid $gid --system ${USERNAME} && \
     adduser --uid $uid --system \
@@ -19,10 +23,6 @@ RUN addgroup --gid $gid --system ${USERNAME} && \
 
 # Set a password for the USER and Grant sudo privileges to the USER
 RUN echo "${USERNAME}:${PASSWORD}" | chpasswd && echo "${USERNAME} ALL=(ALL) ALL" >> /etc/sudoers
-
-# Installing softwares
-RUN apk add --upgrade --no-cache \
-    curl git neovim sudo tmux zoxide zsh
 
 # Changing USER
 USER ${USERNAME}
