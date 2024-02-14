@@ -27,11 +27,11 @@ autoload edit-command-line && zle -N edit-command-line
 bindkey '\C-e' edit-command-line
 
 # History complete command
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 # Color-coded completion menu (if LS_COLORS is set)
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
