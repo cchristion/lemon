@@ -27,7 +27,8 @@ export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
 
 # Add neovim bin to path 
 [[ -d "$HOME/.local/opt/nvim-linux64/bin" ]] && \
-    export PATH="$PATH:$HOME/.local/opt/nvim-linux64/bin"
+    export PATH="$PATH:$HOME/.local/opt/nvim-linux64/bin" && \
+    export EDITOR="$(command -v nvim)"
 
 # Set Environment variables for rust and cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
