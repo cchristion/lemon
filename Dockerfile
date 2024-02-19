@@ -16,7 +16,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 RUN apt-get update && \
-    apt-get install -y curl fzf git ripgrep sudo tmux zoxide zsh && \
+    apt-get install -y curl fzf git nano ripgrep sudo tmux zoxide zsh && \
     rm -rf /var/lib/apt/lists/*
 
 # Adding user
