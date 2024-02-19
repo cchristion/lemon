@@ -9,7 +9,7 @@ setopt autocd interactive_comments HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_ALL_DUPS S
 # History
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE="$XDG_CACHE_HOME"/zsh/history
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
 # Autocomplete
 autoload -U compinit
@@ -39,11 +39,11 @@ bindkey "^[[B" down-line-or-beginning-search
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Themes and plugins
-source "$XDG_CONFIG_HOME"/zsh/.p10k.zsh 2>/dev/null
-source "$XDG_CONFIG_HOME"/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
-source "$XDG_CONFIG_HOME"/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/.p10k.zsh" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
 
 # Extra configurations
-source "$XDG_CONFIG_HOME"/zsh/.extras
-source "$XDG_CONFIG_HOME"/zsh/.local
+source "$XDG_CONFIG_HOME/zsh/.extras"
+source "$XDG_CONFIG_HOME/zsh/.local"
 
