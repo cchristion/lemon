@@ -3,7 +3,7 @@ This repository contains my workspace configurations and environmental tools, de
 
 ## Install Dependencies
 ```
-7zip bash build-base bzip2-dev curl git libffi-dev linux-headers openssh openssl-dev readline-dev sqlite-dev sudo tk-dev tmux xz-dev zlib-dev zoxide zsh
+7zip curl git tmux zoxide zsh
 ```
 ### Docker
 
