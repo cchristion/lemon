@@ -32,3 +32,6 @@ vim.opt.updatetime = 50
 -- Disable line numbers in terminal buffers
 vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
 
+-- Auto reload
+vim.cmd("autocmd FocusGained,BufEnter * checktime")
+
