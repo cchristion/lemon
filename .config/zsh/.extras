@@ -11,9 +11,9 @@ alias h="history"
 # And aliasing micromamba to mm
 if command -v micromamba >/dev/null 2>&1 ; then
     alias mm="$(command -v micromamba)"
-    mm activate mamba >/dev/null 2>&1 || {
-        mm create -n mamba -y -q -c conda-forge python=3 ruff \
-        && mm activate mamba
+    micromamba activate mamba >/dev/null 2>&1 || {
+        micromamba create -n mamba -y -q -c conda-forge python=3 ruff \
+        && micromamba activate mamba
     }
 fi
 
