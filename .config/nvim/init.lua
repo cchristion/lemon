@@ -41,14 +41,13 @@ vim.api.nvim_create_autocmd(
     {
         pattern = "python",
         callback = function()
-            local function run_python_file_in_terminal()
+            local function run_python_terminal()
                 vim.cmd("write")
                 vim.cmd("belowright split | terminal black % -q && python3 %")
                 vim.cmd("startinsert")
             end
 
-            vim.keymap.set("n", "<F5>", run_python_file_in_terminal)
-            vim.keymap.set("i", "<F5>", run_python_file_in_terminal)
+            vim.keymap.set("n", "<leader>r", run_python_terminal)
         end
     }
 )
