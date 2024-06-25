@@ -7,25 +7,16 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:=$HOME/.local/share}"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # Add local bin to path
-[[ -d "$HOME/.local/bin" ]] && \
-    export PATH="$HOME/.local/bin:$PATH"
-
-# Add neovim bin to path
-[[ -d "$HOME/.local/opt/nvim-linux64/bin" ]] && \
-    export PATH="$HOME/.local/opt/nvim-linux64/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
 ### Environment variables ###
 
 # Shell and locale config
-export SHELL="/bin/zsh"
+export SHELL="/usr/bin/zsh"
 export LC_ALL="C.UTF-8"
 
 # Disable .lesshst
 export LESSHISTFILE=-
-
-# Set the default editor to Neovim or vim or vi or nano
-export EDITOR="$(command -v nvim || command -v vim || command -v vi || command -v nano)"
-export VISUAL="$EDITOR"
 
 # Set for rust and cargo
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
