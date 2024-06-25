@@ -6,17 +6,26 @@ alias l="ls -A --color=always --group-directories-first -h -X -v"
 alias ll="ls -A --color=always --group-directories-first -h -X -v -l"
 alias c="clear"
 alias h="history"
-alias e=$EDITOR
 
-# Micromamba
-alias mm="micromamba"
-
-# Start tmux. Should stay close to the top.
-command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
-
-# Setup direnv
-# command -v direnv > /dev/null && eval "$(direnv hook zsh)"
+# Setting python env "mamba" using micromamba
+# And aliasing micromamba to mm
+if command -v micromamba >/dev/null 2>&1 ; then
+    alias mm="$(command -v micromamba)"
+    mm activate mamba >/dev/null 2>&1 || {
+        mm create -n mamba -y -q -c conda-forge python=3 ruff \
+        && mm activate mamba
+    }
+fi
 
 # Setup zoxide
 command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
+
+# Alias neovim
+command -v nvim > /dev/null && alias e="$(command -v nvim)"
+
+# Start tmux. Should stay close to the top.
+# command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
+
+# Setup direnv
+# command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
