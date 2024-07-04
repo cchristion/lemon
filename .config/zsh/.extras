@@ -23,6 +23,10 @@ command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
 # Alias neovim
 command -v nvim > /dev/null && alias e="$(command -v nvim)"
 
+# Setup rye
+export RYE_HOME="$XDG_DATA_HOME/rye"
+[ -f "$RYE_HOME/env" ] && . "$RYE_HOME/env" 
+
 # Start tmux. Should stay close to the top.
 # command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
 
