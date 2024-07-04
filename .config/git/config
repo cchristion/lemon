@@ -9,12 +9,14 @@
     diffFilter = delta --color-only
 
 [delta]
-    light = false
+    dark = true
     navigate = true
-    line-numbers = true
+    side-by-side = true
+    syntax-theme = Dracula
 
 [merge]
     conflictstyle = diff3
 
 [diff]
     colorMoved = default
+
