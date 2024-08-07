@@ -11,7 +11,7 @@
 [delta]
     dark = true
     navigate = true
-    side-by-side = true
+    side-by-side = false
     syntax-theme = Dracula
 
 [merge]
