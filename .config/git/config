@@ -3,7 +3,6 @@
 
 [core]
     pager = delta
-    editor = e
 
 [interactive]
     diffFilter = delta --color-only
