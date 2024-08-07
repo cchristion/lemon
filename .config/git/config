@@ -11,6 +11,7 @@
 [delta]
     dark = true
     navigate = true
+    line-numbers = true
     syntax-theme = Dracula
 
 [merge]
