@@ -44,6 +44,5 @@ source "$XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme" 2>/d
 source "$XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
 
 # Extra configurations
-source "$XDG_CONFIG_HOME/zsh/.local"
 source "$XDG_CONFIG_HOME/zsh/.extras"
-
+source "$XDG_CONFIG_HOME/zsh/.local"
