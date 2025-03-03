@@ -23,7 +23,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 # Set Environment variables for python
-export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 
