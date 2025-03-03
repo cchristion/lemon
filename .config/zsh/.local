@@ -1,2 +1,0 @@
-# Start tmux. Should stay close to the top.
-# command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}

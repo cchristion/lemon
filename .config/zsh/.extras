@@ -1,3 +1,11 @@
+# Nix Package Manager 
+[ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+# Start tmux. Should stay close to the top.
+command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
+
+##################################################
+
 ### Aliases ###
 alias ..="cd .."
 alias ...="cd ../.."
@@ -7,8 +15,20 @@ alias ll="ls -A --color=always --group-directories-first -h -X -v -l"
 alias c="clear"
 alias h="history"
 
-# Setting python env "mamba" using micromamba
-# And aliasing micromamba to mm
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/home/robel/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/robel/.local/share/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# Setting python env "mamba" using micromamba and aliasing micromamba to mm
 if command -v micromamba >/dev/null 2>&1 ; then
     alias mm="$(command -v micromamba)"
     micromamba activate mamba >/dev/null 2>&1 || {
