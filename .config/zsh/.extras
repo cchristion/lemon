@@ -2,7 +2,7 @@
 [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Start tmux. Should stay close to the top.
-command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
+# command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
 
 ##################################################
 
