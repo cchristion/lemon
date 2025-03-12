@@ -28,7 +28,7 @@ fi
 command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
 
 # Alias neovim
-command -v nvim > /dev/null && alias e="$(command -v nvim)"
+command -v nvim > /dev/null && alias e="$(command -v nvim || command -v vim || command -v vi || command -v nano)"
 
 # Setup zoxide
 command -v trash > /dev/null && alias rm="$(command -v trash)"
