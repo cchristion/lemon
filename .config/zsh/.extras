@@ -31,7 +31,7 @@ command -v zoxide > /dev/null && eval "$(zoxide init zsh)" && alias cd="z"
 command -v nvim > /dev/null && alias e="$(command -v nvim)"
 
 # Setup zoxide
-command -v trash > /dev/null && alias rm="trash"
+command -v trash > /dev/null && alias rm="$(command -v trash)"
 
 # Setup direnv
 # command -v direnv > /dev/null && eval "$(direnv hook zsh)"
