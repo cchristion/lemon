@@ -2,7 +2,11 @@
 [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Start tmux. Should stay close to the top.
+# Uncomment the below to start tmux as a single session
 # command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { tmux attach || exec tmux new-session ;} && exit ;} ;}
+
+# Uncomment the below to start tmux as a seperate session
+command -v tmux > /dev/null && { [[ -z ${TMUX+X} ]] && { { exec tmux new-session ;} && exit ;} ;}
 
 ##################################################
 
