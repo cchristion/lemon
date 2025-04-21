@@ -18,11 +18,27 @@ export LC_ALL="C.UTF-8"
 # Disable .lesshst
 export LESSHISTFILE=-
 
-# Set for rust and cargo
+# parallel
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
+
+# Go
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+
+# Docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker 
+
+# ipython
+mkdir -p "$XDG_CONFIG_HOME"/ipython
+
+# java
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
+# rust and cargo
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-# Set Environment variables for python
+# python
 export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
