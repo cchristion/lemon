@@ -1,6 +1,6 @@
 # Nix Package Manager with locale
-[ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && {
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh" &&
+[ -e "$XDG_STATE_HOME/nix/profile/etc/profile.d/nix.sh" ] && {
+    . "$XDG_STATE_HOME/nix/profile/etc/profile.d/nix.sh" &&
         export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
 }
 
