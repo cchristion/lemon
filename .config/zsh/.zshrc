@@ -7,10 +7,9 @@ source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" 2>/dev/null
 setopt autocd interactive_comments HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_ALL_DUPS SHARE_HISTORY
 
 # History
-[ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
 # Autocomplete
 autoload -U compinit
