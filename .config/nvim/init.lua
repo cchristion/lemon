@@ -36,21 +36,3 @@ vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
 
 -- Auto reload
 vim.cmd("autocmd FocusGained,BufEnter * checktime")
-
--- Sets up Neovim to run Python files with F5 using a terminal split for execution.
-vim.api.nvim_create_autocmd(
-    "FileType",
-    {
-        pattern = "python",
-        callback = function()
-            local function run_python_terminal()
-                vim.cmd("write")
-                vim.cmd("belowright split | terminal black % -q && python3 %")
-                vim.cmd("startinsert")
-            end
-
-            vim.keymap.set("n", "<leader>r", run_python_terminal)
-        end
-    }
-)
-
