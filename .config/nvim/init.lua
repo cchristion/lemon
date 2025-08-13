@@ -12,13 +12,13 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
 vim.opt.wrap = false
 
+vim.opt.undodir = os.getenv("XDG_CACHE_HOME") .. "/nvim/undodir"
+vim.opt.viminfofile = os.getenv("XDG_STATE_HOME") .. "/nvim/viminfo"
+vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("XDG_CACHE_HOME") .. "/nvim/undodir"
-vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
