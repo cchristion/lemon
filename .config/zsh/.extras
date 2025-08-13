@@ -38,8 +38,8 @@ fi
 # Setup zoxide
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)" && alias cd="z"
 
-# Alias neovim
-command -v nvim >/dev/null && alias e="$(command -v nvim || command -v vim || command -v vi || command -v nano)"
+# Alias e to an editor
+alias e="$(command -v nvim || command -v vim || command -v vi || command -v nano)"
 
 # Setup direnv
 # command -v direnv > /dev/null && eval "$(direnv hook zsh)"
