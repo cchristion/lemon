@@ -36,3 +36,11 @@ vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
 
 -- Auto reload
 vim.cmd("autocmd FocusGained,BufEnter * checktime")
+
+-- Transparent Background
+vim.cmd [[
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+]]
